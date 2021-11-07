@@ -1,11 +1,28 @@
 package com.example.usingapi_androidmc.ModeloMC;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class NotasMC {
 
+    @SerializedName("id")
+    @Expose
     private int id;
+
+    @SerializedName("titulo")
+    @Expose
     private String titulo;
+
+    @SerializedName("descripcion")
+    @Expose
     private String descripcion;
+
+    @SerializedName("fecha")
+    @Expose
     private String fecha;
+
+    @SerializedName("usuario")
+    @Expose
     private String usuario;
 
 
