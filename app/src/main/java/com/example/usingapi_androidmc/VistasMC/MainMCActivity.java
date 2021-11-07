@@ -62,6 +62,8 @@ public class MainMCActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        binding.btnAbout.setOnClickListener(view -> AboutMCOpen());
+
     }
 
     public void ListarNotasMC(){
@@ -81,6 +83,11 @@ public class MainMCActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void AboutMCOpen(){
+        Intent intent = new Intent(MainMCActivity.this, AboutMCActivity.class);
+        startActivity(intent);
     }
 
     @Override

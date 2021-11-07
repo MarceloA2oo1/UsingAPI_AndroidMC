@@ -83,16 +83,19 @@ public class NotaMCActivity extends AppCompatActivity {
             public void onResponse(Call<NotasMC> call, Response<NotasMC> response) {
                 if (response.isSuccessful()){
                     Toast.makeText(NotaMCActivity.this, "Actualizado excitosamente", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(NotaMCActivity.this, MainMCActivity.class);
+                    startActivity(intent);
                 }
             }
 
             @Override
             public void onFailure(Call<NotasMC> call, Throwable t) {
                 Log.e("Error:", t.getMessage());
+                Intent intent = new Intent(NotaMCActivity.this, MainMCActivity.class);
+                startActivity(intent);
             }
         });
-        Intent intent = new Intent(NotaMCActivity.this, MainMCActivity.class);
-        startActivity(intent);
+
     }
 
     public void addNotasMC(NotasMC notaMC){
@@ -103,16 +106,19 @@ public class NotaMCActivity extends AppCompatActivity {
             public void onResponse(Call<NotasMC> call, Response<NotasMC> response) {
                 if (response.isSuccessful()){
                     Toast.makeText(NotaMCActivity.this, "Agregado sactifactoriamente", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(NotaMCActivity.this, MainMCActivity.class);
+                    startActivity(intent);
                 }
             }
 
             @Override
             public void onFailure(Call<NotasMC> call, Throwable t) {
                 Log.e("Error:", t.getMessage());
+                Intent intent = new Intent(NotaMCActivity.this, MainMCActivity.class);
+                startActivity(intent);
             }
         });
-        Intent intent = new Intent(NotaMCActivity.this, MainMCActivity.class);
-        startActivity(intent);
+
     }
 
     public void deleteNotasMC(int id){
@@ -123,15 +129,18 @@ public class NotaMCActivity extends AppCompatActivity {
             public void onResponse(Call<NotasMC> call, Response<NotasMC> response) {
                 if (response.isSuccessful()){
                     Toast.makeText(NotaMCActivity.this, "Se ha Eliminado excitosamente", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(NotaMCActivity.this, MainMCActivity.class);
+                    startActivity(intent);
                 }
             }
 
             @Override
             public void onFailure(Call<NotasMC> call, Throwable t) {
                 Log.e("Error:", t.getMessage());
+                Intent intent = new Intent(NotaMCActivity.this, MainMCActivity.class);
+                startActivity(intent);
             }
         });
-        Intent intent = new Intent(NotaMCActivity.this, MainMCActivity.class);
-        startActivity(intent);
+
     }
 }

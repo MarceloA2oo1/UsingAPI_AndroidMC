@@ -13,10 +13,10 @@
         android:theme="@style/Theme.UsingAPI_AndroidMC"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".VistasMC.NotaMCActivity"
+            android:name=".VistasMC.AboutMCActivity"
             android:exported="true" />
         <activity
-            android:name=".VistasMC.MainMCActivity"
+            android:name=".VistasMC.SplashScreemMCActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".VistasMC.NotaMCActivity"
+            android:exported="true" />
+        <activity
+            android:name=".VistasMC.MainMCActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
