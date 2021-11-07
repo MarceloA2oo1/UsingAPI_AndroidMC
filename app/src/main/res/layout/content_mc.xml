@@ -8,36 +8,36 @@
     tools:context=".VistasMC.MainMCActivity"
     tools:showIn="@layout/activity_main_mcactivity"
     android:orientation="vertical"
-    android:padding="15dp">
+    android:paddingTop="50px">
 
     <TextView
         android:id="@+id/txtidNota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ID"/>
+        android:text="ID "/>
 
     <TextView
         android:id="@+id/txtTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Titulo" />
+        android:text="Titulo " />
 
     <TextView
         android:id="@+id/txtDescripcion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Descripcion"/>
+        android:text="Descripcion "/>
 
     <TextView
         android:id="@+id/txtFecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fecha"/>
+        android:text="Fecha "/>
 
     <TextView
         android:id="@+id/txtUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Usuario"/>
+        android:text="Usuario "/>
 
 </LinearLayout>

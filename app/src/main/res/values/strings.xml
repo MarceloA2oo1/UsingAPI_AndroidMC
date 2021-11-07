@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">UsingAPI_AndroidMC</string>
+    <string name="action_settings">Settings</string>
 </resources>

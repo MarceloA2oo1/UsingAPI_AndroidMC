@@ -1,6 +1,7 @@
 package com.example.usingapi_androidmc.AdapterMC;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 
 import com.example.usingapi_androidmc.ModeloMC.NotasMC;
 import com.example.usingapi_androidmc.R;
+import com.example.usingapi_androidmc.VistasMC.NotaMCActivity;
 
 import java.util.List;
 
@@ -45,6 +47,18 @@ public class NotasAdapterMC extends ArrayAdapter<NotasMC> {
         txtUser.setText(String.format("USUARIO:%s", notasMC.get(position).getUsuario()));
 
         //implement update
+        rowView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, NotaMCActivity.class);
+                intent.putExtra("ID", String.valueOf(notasMC.get(position).getId()));
+                intent.putExtra("TITULO", String.valueOf(notasMC.get(position).getTitulo()));
+                intent.putExtra("DESCRIPCION", String.valueOf(notasMC.get(position).getDescripcion()));
+                intent.putExtra("FECHA", String.valueOf(notasMC.get(position).getFecha()));
+                intent.putExtra("USUARIO", String.valueOf(notasMC.get(position).getUsuario()));
+                context.startActivity(intent);
+            }
+        });
 
 
         return rowView;

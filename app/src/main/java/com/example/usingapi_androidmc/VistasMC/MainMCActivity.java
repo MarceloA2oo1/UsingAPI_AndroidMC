@@ -3,9 +3,11 @@ package com.example.usingapi_androidmc.VistasMC;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
@@ -33,22 +35,33 @@ public class MainMCActivity extends AppCompatActivity {
     List<NotasMC> listNotasMC = new ArrayList<>();
     ListView listView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainMcactivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getSupportActionBar().hide();
+
+        //toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(binding.toolbar);
 
         listView = binding.lstListView;
+
         ListarNotasMC();
 
-       // toolbar = (Toolbar) findViewById(R.id.toolbar);
-       // setSupportActionBar(toolbar);
-
+        //view add
         FloatingActionButton fab = binding.fab;
-        fab.setOnClickListener(view -> Snackbar.make(view, "Replase witch your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show());
+        fab.setOnClickListener(view -> {
+            Intent intent = new Intent(MainMCActivity.this, NotaMCActivity.class);
+            intent.putExtra("ID", "");
+            intent.putExtra("TITULO", "");
+            intent.putExtra("DESCRIPCION", "");
+            intent.putExtra("FECHA", "");
+            intent.putExtra("USUARIO", "");
+
+            startActivity(intent);
+        });
+
     }
 
     public void ListarNotasMC(){
@@ -69,23 +82,23 @@ public class MainMCActivity extends AppCompatActivity {
         });
 
     }
-    /*
-    public boolean aCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_main, menu);
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        //Inflate menu;
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MrnuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if(id == R.id.action_settings){
+        if (id == R.id.action_settings) {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
-     */
 
 }
